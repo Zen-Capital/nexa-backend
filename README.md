@@ -14,7 +14,7 @@
 
 Nexa utiliza:
 - **Go** para o backend
-- **PostgreSQL** para armazenamento de dados
+- **MongoDB** para armazenamento de dados
 - **JWT** para autenticação segura
 - Integrações com APIs financeiras para dados atualizados de mercado
 
