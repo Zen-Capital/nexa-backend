@@ -1,3 +1,3 @@
-package ma
+package main
 
 func main() {}
