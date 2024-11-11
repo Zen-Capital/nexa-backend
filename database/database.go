@@ -13,7 +13,7 @@ import (
 var DB *mongo.Database
 
 func ConnectDatabase() {
-	err := godotenv.Load("mongo.env")
+	err := godotenv.Load(".env")
 	if err != nil {
 		log.Fatal("Erro ao carregar .env")
 	}
