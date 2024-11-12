@@ -12,7 +12,7 @@ import (
 
 var DB *mongo.Database
 
-func ConnectDatabase() {
+func ConnectDatabase() *mongo.Client {
 	err := godotenv.Load(".env")
 	if err != nil {
 		log.Fatal("Erro ao carregar .env")
@@ -32,4 +32,5 @@ func ConnectDatabase() {
 
 	DB = client.Database("Nexa")
 	log.Println("Conectado ao MongoDB com segurança")
+	return client
 }
