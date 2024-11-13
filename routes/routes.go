@@ -8,4 +8,6 @@ import (
 func SetupRoutes(client *mongo.Client) {
 	app := fiber.New()
 	app.Listen(":3000")
+	users := app.Group("/users")
+
 }

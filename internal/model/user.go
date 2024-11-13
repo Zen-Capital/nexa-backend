@@ -9,4 +9,5 @@ type User struct {
 	Password string             `json:"password" bson:"password"`
 	Email    string             `json:"email" bson:"email"`
 	Account  Account            `json:"account" bson:"account"`
+	IsActive bool               `json:"is_active" bson:"is_active"`
 }
