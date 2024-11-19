@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"net/http"
 	"time"
 
 	"github.com/Zen-Capital/nexa-backend/internal/model"
@@ -39,7 +40,7 @@ func createUser(c *fiber.Ctx) error {
 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(input.Password), bcrypt.DefaultCost)
 	if err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-			"error": "Erro ao encriptar senha",
+			"error": "Erro ao criptografar a senha",
 		})
 	}
 
@@ -58,5 +59,10 @@ func createUser(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
 			"error": "Erro ao salvar usuário",
 		})
+
 	}
+
+	return c.Status(http.StatusCreated).JSON(fiber.Map{
+		"message": "Usuário criado com sucesso",
+	})
 }
