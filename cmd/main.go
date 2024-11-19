@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	client := database.ConnectDatabase()
-	routes.SetupRoutes(client)
+	database.ConnectDatabase()
+	routes.SetupRoutes()
 }

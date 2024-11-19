@@ -10,9 +10,12 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-var DB *mongo.Database
+var (
+	DB     *mongo.Database
+	client *mongo.Client
+)
 
-func ConnectDatabase() *mongo.Client {
+func ConnectDatabase() {
 	err := godotenv.Load(".env")
 	if err != nil {
 		log.Fatal("Erro ao carregar .env")
@@ -32,5 +35,8 @@ func ConnectDatabase() *mongo.Client {
 
 	DB = client.Database("Nexa")
 	log.Println("Conectado ao MongoDB com segurança")
-	return client
+}
+
+func GetCollection(name string) *mongo.Collection {
+	return DB.Collection(name)
 }

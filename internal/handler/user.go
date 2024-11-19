@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/Zen-Capital/nexa-backend/internal/model"
+	"github.com/Zen-Capital/nexa-backend/internal/service"
 	"github.com/gofiber/fiber/v2"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"golang.org/x/crypto/bcrypt"
