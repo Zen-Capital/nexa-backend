@@ -10,7 +10,7 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-func createUser(c *fiber.Ctx) error {
+func CreateUser(c *fiber.Ctx) error {
 	type UserInput struct {
 		Email    string `json:"email"`
 		Username string `json:"username"`
